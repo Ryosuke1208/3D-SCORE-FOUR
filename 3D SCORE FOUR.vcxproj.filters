@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="playerCanPut.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="playerPutProc.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="showTitle.cpp">
+      <Filter>title</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="PvC.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="PvP.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="cpuPutProc.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="showWinner.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="showFinishedStatus.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="reachArrayPush.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="makeFigure.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="isReach.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="isDraw.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="isDone.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="getBingoLine.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="fill.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="search.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="findBestMove.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="showFinishedLine.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="difficultValue.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="cpuCanPut.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="evaluation.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="arrayPush.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="cntDangerLine.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="player">
+      <UniqueIdentifier>{40d7e2ea-bf50-4090-82bc-265073216ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="title">
+      <UniqueIdentifier>{9bac7e75-8554-45a6-b10f-463f89eba5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{383b4c13-40af-44e1-947e-2b4fb839b5f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{06389172-268c-4e10-913a-afddeb687280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpu">
+      <UniqueIdentifier>{395bc138-a359-43bb-9b8a-4a47dbf153d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="define.h">
+      <Filter>main</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
