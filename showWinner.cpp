@@ -3,42 +3,42 @@
 //************************************************
 #include "define.h"
 
-void showWinPvP(int playerNum) {
+void showWinPvP(int p_num) {
     WaitTimer(1000);// 前のエンター入力と同時に読み取る可能性があるので少し止める
-    unsigned int Cr;
+    unsigned int color;
     ClearDrawScreen();
     SetFontSize(100);
-    if (playerNum == P1) {
-        Cr = LIGHT_RED;
-        DrawString(103, 300, "PLAYER1　WIN", Cr);
+    if (p_num == P1) {
+        color = LIGHT_RED;
+        DrawString(103, 300, "PLAYER1　WIN", color);
     }
     else {
-        Cr = LIGHT_BLUE;
-        DrawString(103, 300, "PLAYER2 WIN", Cr);
+        color = LIGHT_BLUE;
+        DrawString(103, 300, "PLAYER2 WIN", color);
     }
     SetFontSize(50);
-    DrawString(260, 500, "press enter", Cr);
+    DrawString(260, 500, "press enter", color);
     ScreenFlip();
     while (1) {
         if (CheckHitKey(KEY_INPUT_RETURN)) break;
     }
 }
 
-void showWinPvC(int playerNum) {
+void showWinPvC(int p_num) {
     WaitTimer(1000);// 前のエンター入力と同時に読み取る可能性があるので少し止める
-    unsigned int Cr;
+    unsigned int color;
     ClearDrawScreen();
     SetFontSize(100);
-    if (playerNum == P1) {
-        Cr = LIGHT_RED;
-        DrawString(103, 300, "PLAYER1　WIN", Cr);
+    if (p_num == P1) {
+        color = LIGHT_RED;
+        DrawString(103, 300, "PLAYER1　WIN", color);
     }
     else {
-        Cr = LIGHT_BLUE;
-        DrawString(103, 300, "  CPU  WIN  ", Cr);
+        color = LIGHT_BLUE;
+        DrawString(103, 300, "  CPU  WIN  ", color);
     }
     SetFontSize(50);
-    DrawString(260, 500, "press enter", Cr);
+    DrawString(260, 500, "press enter", color);
     ScreenFlip();
     while (1) {
         if (CheckHitKey(KEY_INPUT_RETURN)) break;

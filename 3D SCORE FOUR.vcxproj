@@ -144,6 +144,7 @@
     <ClCompile Include="cpuCanPut.cpp" />
     <ClCompile Include="cpuPutProc.cpp" />
     <ClCompile Include="difficultValue.cpp" />
+    <ClCompile Include="easyValue.cpp" />
     <ClCompile Include="evaluation.cpp" />
     <ClCompile Include="fill.cpp" />
     <ClCompile Include="findBestMove.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="isReach.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="makeFigure.cpp" />
+    <ClCompile Include="normalValue.cpp" />
     <ClCompile Include="playerCanPut.cpp" />
     <ClCompile Include="playerPutProc.cpp" />
     <ClCompile Include="PvC.cpp" />

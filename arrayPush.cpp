@@ -4,13 +4,13 @@
 //************************************************
 #include "define.h"
 
-void arrayPush(int x, int y, int z, int arrayList[20][3]) {
+void arrayPush(int x, int y, int z, int array_list[20][3]) {
 	int i;
 	for (i = 0; i < 20; i++) {
-		if (arrayList[i][0] == -1) {
-			arrayList[i][0] = x;
-			arrayList[i][1] = y;
-			arrayList[i][2] = z;
+		if (array_list[i][0] == -1) {
+			array_list[i][0] = x;
+			array_list[i][1] = y;
+			array_list[i][2] = z;
 			break;
 		}
 	}

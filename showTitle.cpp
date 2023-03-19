@@ -6,7 +6,7 @@
 
 void showTitle(int* m, int* d, int* o) {
 	int font_100, font_30, font_50;// フォント設定 
-	int mode = 1, difficulty = 2, order = 0;// モード、難易度、順番
+	int mode = 1, difficulty = 1, order = 0;// モード、難易度、順番
 	int mouse_x, mouse_y;// マウス位置の読み取り
 	font_100 = CreateFontToHandle(NULL, 100, 1, DX_FONTTYPE_ANTIALIASING);
 	font_50 = CreateFontToHandle(NULL, 50, 1, DX_FONTTYPE_ANTIALIASING);

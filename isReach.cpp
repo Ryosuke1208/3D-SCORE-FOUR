@@ -13,12 +13,12 @@ int isReach(int puzzle[][4][4], int p_num) {
 	int cnt1, cnt2;
 	int reach = 0; // リーチの数
 
-	int reachArray[10][3]; // リーチになり得るマスを保存する配列 多めにしている
+	int reach_array[10][3]; // リーチになり得るマスを保存する配列 多めにしている
 	// 配列の初期化
 	for (i = 0; i < 10; i++) {
-		reachArray[i][0] = -1;
-		reachArray[i][1] = -1;
-		reachArray[i][2] = -1;
+		reach_array[i][0] = -1;
+		reach_array[i][1] = -1;
+		reach_array[i][2] = -1;
 	}
 	// リーチのチェック
 	for (x = 0; x < 4; x++) {
@@ -31,7 +31,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 			}
 			if (cnt1 == 3 && cnt2 == 1) {
 				for (i = 0; i < 4; i++) {
-					if (puzzle[x][y][i] == OK) reachArrayPush(x, y, i, reachArray);
+					if (puzzle[x][y][i] == OK) reachArrayPush(x, y, i, reach_array);
 				}
 				reach++;
 			}
@@ -45,7 +45,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 			}
 			if (cnt1 == 3 && cnt2 == 1) {
 				for (i = 0; i < 4; i++) {
-					if (puzzle[x][i][z] == OK) reachArrayPush(x, i, z, reachArray);
+					if (puzzle[x][i][z] == OK) reachArrayPush(x, i, z, reach_array);
 				}
 				reach++;
 			}
@@ -58,7 +58,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 		}
 		if (cnt1 == 3 && cnt2 == 1) {
 			for (i = 0; i < 4; i++) {
-				if (puzzle[x][i][i] == OK) reachArrayPush(x, i, i, reachArray);
+				if (puzzle[x][i][i] == OK) reachArrayPush(x, i, i, reach_array);
 			}
 			reach++;
 		}
@@ -70,7 +70,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 		}
 		if (cnt1 == 3 && cnt2 == 1) {
 			for (i = 0; i < 4; i++) {
-				if (puzzle[x][3 - i][i] == OK) reachArrayPush(x, 3 - i, i, reachArray);
+				if (puzzle[x][3 - i][i] == OK) reachArrayPush(x, 3 - i, i, reach_array);
 			}
 			reach++;
 		}
@@ -84,7 +84,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 		}
 		if (cnt1 == 3 && cnt2 == 1) {
 			for (i = 0; i < 4; i++) {
-				if (puzzle[i][y][i] == OK) reachArrayPush(i, y, i, reachArray);
+				if (puzzle[i][y][i] == OK) reachArrayPush(i, y, i, reach_array);
 			}
 			reach++;
 		}
@@ -96,7 +96,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 		}
 		if (cnt1 == 3 && cnt2 == 1) {
 			for (i = 0; i < 4; i++) {
-				if (puzzle[i][y][3 - i] == OK) reachArrayPush(i, y, 3 - i, reachArray);
+				if (puzzle[i][y][3 - i] == OK) reachArrayPush(i, y, 3 - i, reach_array);
 			}
 			reach++;
 		}
@@ -110,7 +110,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 		}
 		if (cnt1 == 3 && cnt2 == 1) {
 			for (i = 0; i < 4; i++) {
-				if (puzzle[i][i][z] == OK) reachArrayPush(i, i, z, reachArray);
+				if (puzzle[i][i][z] == OK) reachArrayPush(i, i, z, reach_array);
 			}
 			reach++;
 		}
@@ -122,7 +122,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 		}
 		if (cnt1 == 3 && cnt2 == 1) {
 			for (i = 0; i < 4; i++) {
-				if (puzzle[i][3 - i][z] == OK) reachArrayPush(i, 3 - i, z, reachArray);
+				if (puzzle[i][3 - i][z] == OK) reachArrayPush(i, 3 - i, z, reach_array);
 			}
 			reach++;
 		}
@@ -137,7 +137,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 			}
 			if (cnt1 == 3 && cnt2 == 1) {
 				for (i = 0; i < 4; i++) {
-					if (puzzle[i][y][z] == OK) reachArrayPush(i, y, z, reachArray);
+					if (puzzle[i][y][z] == OK) reachArrayPush(i, y, z, reach_array);
 				}
 				reach++;
 			}
@@ -152,7 +152,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 	}
 	if (cnt1 == 3 && cnt2 == 1) {
 		for (i = 0; i < 4; i++) {
-			if (puzzle[i][i][i] == OK) reachArrayPush(i, i, i, reachArray);
+			if (puzzle[i][i][i] == OK) reachArrayPush(i, i, i, reach_array);
 		}
 		reach++;
 	}
@@ -164,7 +164,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 	}
 	if (cnt1 == 3 && cnt2 == 1) {
 		for (i = 0; i < 4; i++) {
-			if (puzzle[i][3 - i][3 - i] == OK) reachArrayPush(i, 3 - i, 3 - i, reachArray);
+			if (puzzle[i][3 - i][3 - i] == OK) reachArrayPush(i, 3 - i, 3 - i, reach_array);
 		}
 		reach++;
 	}
@@ -176,7 +176,7 @@ int isReach(int puzzle[][4][4], int p_num) {
 	}
 	if (cnt1 == 3 && cnt2 == 1) {
 		for (i = 0; i < 4; i++) {
-			if (puzzle[i][3 - i][i] == OK) reachArrayPush(i, 3 - i, i, reachArray);
+			if (puzzle[i][3 - i][i] == OK) reachArrayPush(i, 3 - i, i, reach_array);
 		}
 		reach++;
 	}
@@ -188,23 +188,23 @@ int isReach(int puzzle[][4][4], int p_num) {
 	}
 	if (cnt1 == 3 && cnt2 == 1) {
 		for (i = 0; i < 4; i++) {
-			if (puzzle[i][i][3 - i] == OK) reachArrayPush(i, i, 3 - i, reachArray);
+			if (puzzle[i][i][3 - i] == OK) reachArrayPush(i, i, 3 - i, reach_array);
 		}
 		reach++;
 	}
 	// 実質複数リーチでない複数リーチ（1マス防げばどっちのラインも防げる）の判別
 	// 理論上セブンリーチまではあり得るが、ダブルリーチ以上はめったに起こらないとおもう
 	for (i = 0; i < 10; i++) {
-		if (reachArray[i][0] != -1) {
+		if (reach_array[i][0] != -1) {
 			for (j = i + 1; j < 10; j++) {
-				if (reachArray[j][0] != -1) {
-					if (reachArray[i][0] == reachArray[j][0] &&
-						reachArray[i][1] == reachArray[j][1] &&
-						reachArray[i][2] == reachArray[j][2]) {
+				if (reach_array[j][0] != -1) {
+					if (reach_array[i][0] == reach_array[j][0] &&
+						reach_array[i][1] == reach_array[j][1] &&
+						reach_array[i][2] == reach_array[j][2]) {
 						reach--;
-						reachArray[j][0] = -1;
-						reachArray[j][1] = -1;
-						reachArray[j][2] = -1;
+						reach_array[j][0] = -1;
+						reach_array[j][1] = -1;
+						reach_array[j][2] = -1;
 					}
 				}
 			}

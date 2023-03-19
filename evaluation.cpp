@@ -3,53 +3,53 @@
 //************************************************
 #include "define.h"
 
-void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
+void evaluation(int puzzle[][4][4], int value[][4][4], int p_num) {
 	int i, j, k;
 	int x, y, z;
-	int tempScore = 0;
-	int enemyNumber = 0;
-	if (playerNumber == P2) enemyNumber = P1;
-	if (playerNumber == P1) enemyNumber = P2;
+	int temp_score = 0;
+	int e_num = 0;
+	if (p_num == P2) e_num = P1;
+	if (p_num == P1) e_num = P2;
 
 	for (i = 3; i >= 0; i--) {
 		for (j = 0; j < 4; j++) {
 			for (k = 0; k < 4; k++) {
 				if (puzzle[i][j][k] == OK) {
-					tempScore = value[i][j][k];
+					temp_score = value[i][j][k];
 					// óßëÃÇ≈ÇÃèc
 					for (x = 0; x < 4; x++) {
-						if (puzzle[x][j][k] == enemyNumber) {
-							tempScore--;
+						if (puzzle[x][j][k] == e_num) {
+							temp_score--;
 							break;
 						}
 					}
 					// ïΩñ Ç≈ÇÃèc
 					for (y = 0; y < 4; y++) {
-						if (puzzle[i][y][k] == enemyNumber) {
-							tempScore--;
+						if (puzzle[i][y][k] == e_num) {
+							temp_score--;
 							break;
 						}
 					}
 					// ïΩñ Ç≈ÇÃâ°
 					for (z = 0; z < 4; z++) {
-						if (puzzle[i][j][z] == enemyNumber) {
-							tempScore--;
+						if (puzzle[i][j][z] == e_num) {
+							temp_score--;
 							break;
 						}
 					}
 					// ç∂â∫Ç©ÇÁâEè„Ç÷ÇÃïΩñ Ç≈ÇÃéŒÇﬂ
 					if (j == k) {
 						for (z = 0; z < 4; z++) {
-							if (puzzle[i][z][z] == enemyNumber) {
-								tempScore--;
+							if (puzzle[i][z][z] == e_num) {
+								temp_score--;
 								break;
 							}
 						}
 						// àÍî‘â∫ÇÃç∂â∫Ç©ÇÁàÍî‘è„âEè„Ç÷ÇÃëŒäpê¸
 						if (i + j == 3) {
 							for (x = 3, y = 0; x >= 0; x--, y++) {
-								if (puzzle[x][y][y] == enemyNumber) {
-									tempScore--;
+								if (puzzle[x][y][y] == e_num) {
+									temp_score--;
 									break;
 								}
 							}
@@ -57,8 +57,8 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 						// àÍî‘â∫ÇÃâEè„Ç©ÇÁàÍî‘è„ç∂â∫Ç÷ÇÃëŒäpê¸
 						if (i == j) {
 							for (x = 3; x >= 0; x--) {
-								if (puzzle[x][x][x] == enemyNumber) {
-									tempScore--;
+								if (puzzle[x][x][x] == e_num) {
+									temp_score--;
 									break;
 								}
 							}
@@ -67,16 +67,16 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 					// ç∂è„Ç©ÇÁâEâ∫Ç÷ÇÃïΩñ Ç≈ÇÃéŒÇﬂ
 					if (j + k == 3) {
 						for (y = 3, z = 0; y >= 0; y--, z++) {
-							if (puzzle[i][y][z] == enemyNumber) {
-								tempScore--;
+							if (puzzle[i][y][z] == e_num) {
+								temp_score--;
 								break;
 							}
 						}
 						// àÍî‘â∫ÇÃç∂è„Ç©ÇÁàÍî‘è„ÇÃâEâ∫Ç÷ÇÃëŒäpê¸
 						if (i == j) {
 							for (x = 3, z = 0; x >= 0; x--, z++) {
-								if (puzzle[x][x][z] == enemyNumber) {
-									tempScore--;
+								if (puzzle[x][x][z] == e_num) {
+									temp_score--;
 									break;
 								}
 							}
@@ -84,8 +84,8 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 						// àÍî‘â∫ÇÃâEâ∫Ç©ÇÁàÍî‘è„ÇÃç∂è„Ç÷ÇÃëŒäpê¸
 						if (i == k) {
 							for (x = 3, y = 0; x >= 0; x--, y++) {
-								if (puzzle[x][y][x] == enemyNumber) {
-									tempScore--;
+								if (puzzle[x][y][x] == e_num) {
+									temp_score--;
 									break;
 								}
 							}
@@ -94,8 +94,8 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 					// ècïΩñ ÅiÇxé≤ÅjÇ≈ÇÃéŒÇﬂ
 					if (i + k == 3) {
 						for (x = 0, z = 3; x < 4; x++, z--) {
-							if (puzzle[x][j][z] == enemyNumber) {
-								tempScore--;
+							if (puzzle[x][j][z] == e_num) {
+								temp_score--;
 								break;
 							}
 						}
@@ -103,8 +103,8 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 					// ècïΩñ Ç≈ÇÃéŒÇﬂîΩëŒ
 					if (i == k) {
 						for (x = 0; x < 4; x++) {
-							if (puzzle[x][j][x] == enemyNumber) {
-								tempScore--;
+							if (puzzle[x][j][x] == e_num) {
+								temp_score--;
 								break;
 							}
 						}
@@ -112,8 +112,8 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 					// âúïΩñ ÅiÇyé≤ÅjÇ≈ÇÃéŒÇﬂ
 					if (i + j == 3) {
 						for (x = 0, y = 3; x < 4; x++, y--) {
-							if (puzzle[x][y][k] == enemyNumber) {
-								tempScore--;
+							if (puzzle[x][y][k] == e_num) {
+								temp_score--;
 								break;
 							}
 						}
@@ -121,13 +121,13 @@ void evaluation(int puzzle[][4][4], int value[][4][4], int playerNumber) {
 					// âúïΩñ Ç≈ÇÃéŒÇﬂîΩëŒ
 					if (i == j) {
 						for (x = 0; x < 4; x++) {
-							if (puzzle[x][x][k] == enemyNumber) {
-								tempScore--;
+							if (puzzle[x][x][k] == e_num) {
+								temp_score--;
 								break;
 							}
 						}
 					}
-					value[i][j][k] = tempScore;
+					value[i][j][k] = temp_score;
 				}
 			}
 		}

@@ -5,6 +5,8 @@
 
 void makeFigure(int[][4][4], int, int);
 void findBestMove(int, int[][4][4], int*, int*, int*);
+void easyValue(int[][4][4], int*, int*, int*);
+void normalValue(int[][4][4], int*, int*, int*);
 void difficultValue(int[][4][4], int*, int*, int*);
 
 void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
@@ -17,9 +19,9 @@ void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
             findBestMove(depth, puzzle, &x, &y, &z);
             if (x != 4) break; // ç≈óDêÊÇ∑Ç◊Ç´éËÇ™å©Ç¬Ç©Ç¡ÇΩèÍçáÇÕÇªÇ±Ç≈î≤ÇØÇÈ
             depth++;
-            if (depth == 9) {
-                //if (d == 0) easyValue(puzzle, &x, &y, &z);
-                //else if (d == 1) normalValue(puzzle, &x, &y, &z);
+            if (depth == 8) {
+                if (d == 0) easyValue(puzzle, &x, &y, &z);
+                else if (d == 1) normalValue(puzzle, &x, &y, &z);
                 if (d == 2) difficultValue(puzzle, &x, &y, &z);
                 break;
             }

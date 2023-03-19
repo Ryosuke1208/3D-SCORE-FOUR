@@ -1,21 +1,17 @@
 //************************************************
-// CPUの強さ「強い」の評価関数
-// 基本的には勝てない位の強さ
-// 阪大生のと福工大？かどっかの研究室の
-// プログラムには勝てたからそこそこ強いはず
+// CPUの強さ「普通」の評価関数
+// 普通にかてる？？
 //************************************************
 #include "define.h"
 
 boolean cpuCanPut(int[][4][4], int, int, int);
 void evaluation(int[][4][4], int[][4][4], int);
-int cntDangerLine(int[][4][4], int[][4][4], int, int[20][3]);
 
-void difficultValue(int puzzle[][4][4], int* x, int* y, int* z) {
+void normalValue(int puzzle[][4][4], int* x, int* y, int* z) {
     int i, j, k;
     int cnt;
     int max = -999;
     boolean flg = false;
-    int arrayList[20][3];
     //各マスの評価値 単純にそこに置いた時のビンゴになり得る数を基にしている
     int value[4][4][4] =
     {
@@ -153,20 +149,8 @@ void difficultValue(int puzzle[][4][4], int* x, int* y, int* z) {
         }
     }
 
-    // 危ないラインがあればそこの評価値を上げる
-    if (cntDangerLine(puzzle, value, P2, arrayList)) {
-        cnt = 0;
-        while (arrayList[cnt][0] != -1) {
-            value[arrayList[cnt][0]][arrayList[cnt][1]][arrayList[cnt][2]] += 25;
-            cnt++;
-        }
-    }
     // 盤面のライン数による各マスの評価値増減
     evaluation(puzzle, value, P2);
-    value[1][0][0] = 1;
-    value[1][0][3] = 1;
-    value[1][3][0] = 1;
-    value[1][3][3] = 1;
 
     /*******************************************************************************/
     // 評価値の高い手が見つかった時はそこを返す
