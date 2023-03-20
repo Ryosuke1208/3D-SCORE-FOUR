@@ -58,7 +58,7 @@
     <ClCompile Include="showFinishedLine.cpp">
       <Filter>tools</Filter>
     </ClCompile>
-    <ClCompile Include="difficultValue.cpp">
+    <ClCompile Include="chooseByValue.cpp">
       <Filter>cpu</Filter>
     </ClCompile>
     <ClCompile Include="cpuCanPut.cpp">
@@ -73,16 +73,13 @@
     <ClCompile Include="cntDangerLine.cpp">
       <Filter>cpu</Filter>
     </ClCompile>
-    <ClCompile Include="normalValue.cpp">
-      <Filter>cpu</Filter>
-    </ClCompile>
-    <ClCompile Include="easyValue.cpp">
-      <Filter>cpu</Filter>
-    </ClCompile>
     <ClCompile Include="montecarlo.cpp">
       <Filter>cpu</Filter>
     </ClCompile>
     <ClCompile Include="checkWinner.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="cntPutNum.cpp">
       <Filter>cpu</Filter>
     </ClCompile>
   </ItemGroup>

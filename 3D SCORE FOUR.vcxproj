@@ -142,10 +142,10 @@
     <ClCompile Include="arrayPush.cpp" />
     <ClCompile Include="checkWinner.cpp" />
     <ClCompile Include="cntDangerLine.cpp" />
+    <ClCompile Include="cntPutNum.cpp" />
     <ClCompile Include="cpuCanPut.cpp" />
     <ClCompile Include="cpuPutProc.cpp" />
-    <ClCompile Include="difficultValue.cpp" />
-    <ClCompile Include="easyValue.cpp" />
+    <ClCompile Include="chooseByValue.cpp" />
     <ClCompile Include="evaluation.cpp" />
     <ClCompile Include="fill.cpp" />
     <ClCompile Include="findBestMove.cpp" />
@@ -156,7 +156,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="makeFigure.cpp" />
     <ClCompile Include="montecarlo.cpp" />
-    <ClCompile Include="normalValue.cpp" />
     <ClCompile Include="playerCanPut.cpp" />
     <ClCompile Include="playerPutProc.cpp" />
     <ClCompile Include="PvC.cpp" />
