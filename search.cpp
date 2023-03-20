@@ -81,6 +81,20 @@ boolean search(int depth, int puzzle[][4][4], int x, int y, int z) {
         puzzle[x][y][z] = OK;
         if (x > 0) puzzle[x - 1][y][z] = NG;
     }
+    // ﾌﾟﾚｲﾔｰが置く(1手目)→その次にまたﾌﾟﾚｲﾔｰの番になった時に置くと
+    // ダブルリーチができてしまう時
+    else if (depth == 7) {
+        puzzle[x][y][z] = P1;
+        if (x > 0) puzzle[x - 1][y][z] = OK;
+        if (isReach(puzzle, P2) == 0) {
+            findBestMove(4, puzzle, &x2, &y2, &z2);
+            if (x2 != 4) flg = true;
+        }
+        puzzle[x][y][z] = P2;
+        if (isReach(puzzle, P1)) flg = false;
+        puzzle[x][y][z] = OK;
+        if (x > 0) puzzle[x - 1][y][z] = NG;
+    }
     else if (depth == 10) {
         puzzle[x][y][z] = P1;
         if (x > 0) puzzle[x - 1][y][z] = OK;
