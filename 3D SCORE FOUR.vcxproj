@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arrayPush.cpp" />
+    <ClCompile Include="checkWinner.cpp" />
     <ClCompile Include="cntDangerLine.cpp" />
     <ClCompile Include="cpuCanPut.cpp" />
     <ClCompile Include="cpuPutProc.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="isReach.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="makeFigure.cpp" />
+    <ClCompile Include="montecarlo.cpp" />
     <ClCompile Include="normalValue.cpp" />
     <ClCompile Include="playerCanPut.cpp" />
     <ClCompile Include="playerPutProc.cpp" />

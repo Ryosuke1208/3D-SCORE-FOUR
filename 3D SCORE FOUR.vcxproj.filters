@@ -79,6 +79,12 @@
     <ClCompile Include="easyValue.cpp">
       <Filter>cpu</Filter>
     </ClCompile>
+    <ClCompile Include="montecarlo.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="checkWinner.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="player">

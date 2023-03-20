@@ -8,6 +8,7 @@ void findBestMove(int, int[][4][4], int*, int*, int*);
 void easyValue(int[][4][4], int*, int*, int*);
 void normalValue(int[][4][4], int*, int*, int*);
 void difficultValue(int[][4][4], int*, int*, int*);
+void montecalro(int puzzle[][4][4], int p_num, int* i, int* j, int* k);
 
 void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
     int x = 0, y = 0, z = 0;
@@ -20,6 +21,8 @@ void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
             if (x != 4) break; // ç≈óDêÊÇ∑Ç◊Ç´éËÇ™å©Ç¬Ç©Ç¡ÇΩèÍçáÇÕÇªÇ±Ç≈î≤ÇØÇÈ
             depth++;
             if (depth == 8) {
+                //montecalro(puzzle, P2, &x, &y, &z);
+                //break;
                 if (d == 0) easyValue(puzzle, &x, &y, &z);
                 else if (d == 1) normalValue(puzzle, &x, &y, &z);
                 if (d == 2) difficultValue(puzzle, &x, &y, &z);

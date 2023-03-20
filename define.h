@@ -26,3 +26,4 @@
 #define P2 2
 #define BINGO_P1 3
 #define BINGO_P2 4
+#define DRAW 5
