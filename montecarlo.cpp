@@ -144,4 +144,5 @@ void montecalro(int puzzle[][4][4], int p_num, int* i, int* j, int* k, int d) {
 	*i = can_put_array[best_score_cnt][0];
 	*j = can_put_array[best_score_cnt][1];
 	*k = can_put_array[best_score_cnt][2];
+	printfDx("%f ", best_score);
 }

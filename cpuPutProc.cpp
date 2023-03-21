@@ -33,8 +33,8 @@ void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
                     break;
                 }
             }
-            if (d == 2 && depth == 8) {
-                if (cntPutNum(puzzle) < 12) {
+            if (d == 2 && depth == 7) {
+                if (cntPutNum(puzzle) < 15) {
                     chooseByValue(puzzle, &x, &y, &z);
                     break;
                 }
