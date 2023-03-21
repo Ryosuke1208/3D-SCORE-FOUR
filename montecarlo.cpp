@@ -92,7 +92,7 @@ void montecalro(int puzzle[][4][4], int p_num, int* i, int* j, int* k, int d) {
 	// “ïˆÕ“x‚Ì’²®
 	if (d == 0) playout_num = 100;
 	else if (d == 1) playout_num = 1000;
-	else if (d == 2) playout_num = 2500;
+	else if (d == 2) playout_num = 3500;
 	initArray(can_put_array);
 	for (x = 0; x < 4; x++) {
 		for (y = 0; y < 4; y++) {
