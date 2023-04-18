@@ -6,6 +6,7 @@
 void makeFigure(int[][4][4], int, int);
 void findBestMove(int, int[][4][4], int*, int*, int*);
 void montecalro(int[][4][4], int, int*, int*, int*, int);
+void easyValue(int[][4][4], int*, int*, int*);
 void chooseByValue(int[][4][4], int*, int*, int*);
 int cntPutNum(int[][4][4]);
 
@@ -20,11 +21,11 @@ void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
             if (x != 4) break; // Å—Dæ‚·‚×‚«è‚ªŒ©‚Â‚©‚Á‚½ê‡‚Í‚»‚±‚Å”²‚¯‚é
             depth++;
             if (d == 0 && depth == 3) {
-                chooseByValue(puzzle, &x, &y, &z);
+                easyValue(puzzle, &x, &y, &z);
                 break;
             }
             if (d == 1 && depth == 5) {
-                if (cntPutNum(puzzle) < 20) {
+                if (cntPutNum(puzzle) < 12) {
                     chooseByValue(puzzle, &x, &y, &z);
                     break;
                 }
@@ -34,7 +35,7 @@ void cpuPutProc(int puzzle[][4][4], int d, int temp[][3]) {
                 }
             }
             if (d == 2 && depth == 7) {
-                if (cntPutNum(puzzle) < 15) {
+                if (cntPutNum(puzzle) < 12) {
                     chooseByValue(puzzle, &x, &y, &z);
                     break;
                 }

@@ -1,5 +1,6 @@
 //************************************************
 // モンテカルロ法を用いて勝率のいい手を探す
+// コメントは英語で書くとかっこいいね
 //************************************************
 #include "define.h"
 
@@ -49,7 +50,7 @@ double playOut(int winner) {
 boolean simulate_game(int temp_array[][4][4], int p_num, int *winner) {
 	int x, y, z;
 	int put_place = 0;
-	int canPutCnt = 0; // 何個置ける場所があるのか
+	int canPutCnt = 0; // cnt how many place where cpu can put 
 	int array_list[20][3];
 	initArray(array_list);
 	for (x = 0; x < 4; x++) {
@@ -57,7 +58,7 @@ boolean simulate_game(int temp_array[][4][4], int p_num, int *winner) {
 			for (z = 0; z < 4; z++) {
 				if (temp_array[x][y][z] == OK) {
 					if (putCheck(temp_array, x, y, z, p_num)) {
-						// 空いてるマスの座標を何個置けるかを保存する
+						// push XYZ-point to array where cpu can put
 						arrayPush(x, y, z, array_list);
 						canPutCnt++;
 					}
@@ -65,11 +66,11 @@ boolean simulate_game(int temp_array[][4][4], int p_num, int *winner) {
 			}
 		}
 	}
-	if (!canPutCnt) {// もう置けないとき→p_num側の負け
+	if (!canPutCnt) {// canot put anymore → p_num lose
 		*winner = REVERSE(p_num);
 		return true;
 	}
-	put_place = GetRand(canPutCnt - 1); // 置く手をランダムに決定する
+	put_place = GetRand(canPutCnt - 1); // choose random place
 	temp_array[array_list[put_place][0]][array_list[put_place][1]][array_list[put_place][2]] = p_num;
 	if(array_list[put_place][0] > 0)
 		temp_array[array_list[put_place][0] - 1][array_list[put_place][1]][array_list[put_place][2]] = OK;
@@ -83,23 +84,23 @@ void montecalro(int puzzle[][4][4], int p_num, int* i, int* j, int* k, int d) {
 	int winner;
 	double best_score = -999.;
 	int best_score_cnt;
-	int canPutCnt = 0; // 何個置ける場所があるのか
+	int canPutCnt = 0;
 	int can_put_array[20][3];
 	double values[20] = { 0 };
 	double temp_score;
 	int temp_array[4][4][4];
 	int playout_num = 0;
-	// 難易度の調整
+	// can change difficulty
+	// but now not use
 	if (d == 0) playout_num = 100;
-	else if (d == 1) playout_num = 1000;
-	else if (d == 2) playout_num = 3500;
+	else if (d == 1) playout_num = 300;
+	else if (d == 2) playout_num = 500;
 	initArray(can_put_array);
 	for (x = 0; x < 4; x++) {
 		for (y = 0; y < 4; y++) {
 			for (z = 0; z < 4; z++) {
 				if (puzzle[x][y][z] == OK) {
 					if (putCheck(puzzle, x, y, z, p_num)) {
-						// 空いてるマスの座標を何個置けるかを保存する
 						arrayPush(x, y, z, can_put_array);
 						canPutCnt++;
 					}
@@ -107,7 +108,7 @@ void montecalro(int puzzle[][4][4], int p_num, int* i, int* j, int* k, int d) {
 			}
 		}
 	}
-	if (!canPutCnt) {// 負け確処理
+	if (!canPutCnt) {// when cpu lose
 		for (x = 0; x < 4; x++) {
 			for (y = 0; y < 4; y++) {
 				for (z = 0; z < 4; z++) {
@@ -144,5 +145,5 @@ void montecalro(int puzzle[][4][4], int p_num, int* i, int* j, int* k, int d) {
 	*i = can_put_array[best_score_cnt][0];
 	*j = can_put_array[best_score_cnt][1];
 	*k = can_put_array[best_score_cnt][2];
-	// printfDx("%f ", best_score);
+	// printfDx("%f ", best_score); // for debug
 }

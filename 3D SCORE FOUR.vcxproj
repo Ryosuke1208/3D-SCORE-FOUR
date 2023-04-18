@@ -146,6 +146,7 @@
     <ClCompile Include="cpuCanPut.cpp" />
     <ClCompile Include="cpuPutProc.cpp" />
     <ClCompile Include="chooseByValue.cpp" />
+    <ClCompile Include="easyValue.cpp" />
     <ClCompile Include="evaluation.cpp" />
     <ClCompile Include="fill.cpp" />
     <ClCompile Include="findBestMove.cpp" />

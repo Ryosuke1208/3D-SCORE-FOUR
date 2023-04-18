@@ -13,7 +13,6 @@ boolean search(int depth, int puzzle[][4][4], int x, int y, int z) {
     boolean flg = false;
     int x2 = 0, y2 = 0, z2 = 0;
     int x3 = 0, y3 = 0, z3 = 0;
-    int x4 = 0, y4 = 0, z4 = 0;
     // CPU側のビンゴが出来るときはそこで決定
     if (depth == 1) {
         puzzle[x][y][z] = P2;
@@ -78,27 +77,6 @@ boolean search(int depth, int puzzle[][4][4], int x, int y, int z) {
             puzzle[x2][y2][z2] = OK;
             if (x2 > 0) puzzle[x2 - 1][y2][z2] = NG;
         }
-        puzzle[x][y][z] = OK;
-        if (x > 0) puzzle[x - 1][y][z] = NG;
-    }
-    // ﾌﾟﾚｲﾔｰが置く(1手目)→その次にまたﾌﾟﾚｲﾔｰの番になった時に置くと
-    // ダブルリーチができてしまう時
-    else if (depth == 7) {
-        puzzle[x][y][z] = P1;
-        if (x > 0) puzzle[x - 1][y][z] = OK;
-        if (isReach(puzzle, P2) == 0) {
-            findBestMove(4, puzzle, &x2, &y2, &z2);
-            if (x2 != 4) flg = true;
-        }
-        puzzle[x][y][z] = P2;
-        if (isReach(puzzle, P1)) flg = false;
-        puzzle[x][y][z] = OK;
-        if (x > 0) puzzle[x - 1][y][z] = NG;
-    }
-    else if (depth == 10) {
-        puzzle[x][y][z] = P1;
-        if (x > 0) puzzle[x - 1][y][z] = OK;
-        if (isReach(puzzle, P1) >= 2 && isReach(puzzle, P2) == 0)  flg = true;
         puzzle[x][y][z] = OK;
         if (x > 0) puzzle[x - 1][y][z] = NG;
     }

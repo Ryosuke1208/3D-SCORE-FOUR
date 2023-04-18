@@ -82,6 +82,9 @@
     <ClCompile Include="cntPutNum.cpp">
       <Filter>cpu</Filter>
     </ClCompile>
+    <ClCompile Include="easyValue.cpp">
+      <Filter>cpu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="player">
